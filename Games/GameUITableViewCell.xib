@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="8" reuseIdentifier="GameUITableViewCell" rowHeight="96" id="ErO-M3-UQb" customClass="GameUITableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="463" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ErO-M3-UQb" id="CLl-If-RIW">
+                <rect key="frame" x="0.0" y="0.0" width="463" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0d-e7-Ccl">
+                        <rect key="frame" x="130" y="7" width="110" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="110" id="zVM-NZ-UEB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Medium" family="Kohinoor Devanagari" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHW-tJ-h6J">
+                        <rect key="frame" x="292" y="7" width="163" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="163" id="cI6-pA-Aj8"/>
+                        </constraints>
+                        <state key="normal" title="See contact info">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8E6-O2-EDI">
+                        <rect key="frame" x="0.0" y="0.0" width="122" height="96"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="122" id="evr-Hy-Lv4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Play Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKj-Q4-Lnk">
+                        <rect key="frame" x="130" y="65" width="115" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="115" id="gQX-Oa-FRh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="vHW-tJ-h6J" secondAttribute="trailing" id="3Lf-M8-l8c"/>
+                    <constraint firstItem="8E6-O2-EDI" firstAttribute="leading" secondItem="CLl-If-RIW" secondAttribute="leading" id="5eW-du-bbI"/>
+                    <constraint firstItem="gKj-Q4-Lnk" firstAttribute="top" secondItem="P0d-e7-Ccl" secondAttribute="bottom" constant="37" id="EMJ-d2-SQP"/>
+                    <constraint firstItem="vHW-tJ-h6J" firstAttribute="centerY" secondItem="gKj-Q4-Lnk" secondAttribute="centerY" constant="-58" id="G5L-vm-uQt"/>
+                    <constraint firstItem="P0d-e7-Ccl" firstAttribute="leading" secondItem="8E6-O2-EDI" secondAttribute="trailing" constant="8" id="TDK-HE-NSR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="8E6-O2-EDI" secondAttribute="bottom" constant="-9" id="laM-9D-2RR"/>
+                    <constraint firstItem="P0d-e7-Ccl" firstAttribute="leading" secondItem="gKj-Q4-Lnk" secondAttribute="leading" id="qCu-vb-hRz"/>
+                    <constraint firstItem="8E6-O2-EDI" firstAttribute="top" secondItem="CLl-If-RIW" secondAttribute="top" id="xSQ-7y-LXI"/>
+                    <constraint firstItem="P0d-e7-Ccl" firstAttribute="top" secondItem="CLl-If-RIW" secondAttribute="topMargin" constant="-1" id="y9t-cu-hei"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="image" destination="8E6-O2-EDI" id="dzJ-ho-xPa"/>
+                <outlet property="labelPlayTime" destination="gKj-Q4-Lnk" id="UjL-Qp-ARZ"/>
+                <outlet property="labelTItle" destination="P0d-e7-Ccl" id="zXv-Ns-mbQ"/>
+            </connections>
+            <point key="canvasLocation" x="263.5" y="78"/>
+        </tableViewCell>
+    </objects>
+</document>
