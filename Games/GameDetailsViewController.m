@@ -1,20 +1,20 @@
 #import "GameDetailsViewController.h"
-#import "FTDatabaseRequester.h"
+#import "DatabaseRequester.h"
 #import "Meeting.h"
-#import "FTUtils.h"
-#import "FTSpinner.h"
+#import "Utils.h"
+#import "Spinner.h"
 
 @interface GameDetailsViewController ()
 @end
 
 @implementation GameDetailsViewController{
-    FTDatabaseRequester *db;
+    DatabaseRequester *db;
 }
 
 - (void)viewDidLoad {
     self.title = @"Game Details";
     [super viewDidLoad];
-    db = [[FTDatabaseRequester alloc] init];
+    db = [[DatabaseRequester alloc] init];
     [self configureView];
 }
 
@@ -28,7 +28,7 @@
 - (void)configureView {
     //  NSLog(@"configureView game: %@", self.game);
     if (self.game) {
-        FTSpinner *spinner = [[FTSpinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
+        Spinner *spinner = [[Spinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
         [spinner startSpinning];
         __weak GameDetailsViewController *weakSelf = self;
         [db getDetailsForGame:self.game andBlock:^(PFObject *object, NSError *error) {
@@ -60,7 +60,7 @@
                     weakSelf.imageViewPicture.image = nil;
                 }
             } else {
-                [FTUtils showAlert:@"We are sorry" withMessage:@"Unfortunatelly, we can't show you this game's details right now"];
+                [Utils showAlert:@"We are sorry" withMessage:@"Unfortunatelly, we can't show you this game's details right now"];
             }
         }];
     }
@@ -87,21 +87,21 @@
                     
                     [db addMeetingToDbWithMeeting:meeting andBlock:^(BOOL succeeded, NSError *error) {
                         if(succeeded) {
-                            [FTUtils showAlert:@"Success" withMessage:@"You joined the game!"];
+                            [Utils showAlert:@"Success" withMessage:@"You joined the game!"];
                         } else {
-                            [FTUtils showAlert:@"We are sorry" withMessage:@"Unfortunatelly, couldn't join the game..."];
+                            [Utils showAlert:@"We are sorry" withMessage:@"Unfortunatelly, couldn't join the game..."];
                             NSLog(@"Error: %@", error);
                         }
                     }];
                 } else {
-                    [FTUtils showAlert:@"Already joined" withMessage:@"Happy Gaming!"];
+                    [Utils showAlert:@"Already joined" withMessage:@"Happy Gaming!"];
                 }
             } else {
-                [FTUtils showAlert:@"We are sorry" withMessage:@"Something went wrong. Check your internet connection."];
+                [Utils showAlert:@"We are sorry" withMessage:@"Something went wrong. Check your internet connection."];
             }
         }];
     } else {
-        [FTUtils showAlert:@"That's your game!" withMessage:@"If you want to play alone, why use the app?"];
+        [Utils showAlert:@"That's your game!" withMessage:@"If you want to play alone, why use the app?"];
     }
 }
 @end

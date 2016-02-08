@@ -1,7 +1,7 @@
-#import "FTSpinner.h"
+#import "Spinner.h"
 #import <CoreGraphics/CoreGraphics.h>
 
-@implementation FTSpinner{
+@implementation Spinner{
     UIView *view;
     UIActivityIndicatorView *spinner;
 }

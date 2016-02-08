@@ -1,11 +1,11 @@
-#import "FTQuoteDispenser.h"
+#import "QuoteDispenser.h"
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "FTDatabaseRequester.h"
-@implementation FTQuoteDispenser
+#import "DatabaseRequester.h"
+@implementation QuoteDispenser
 
 - (void) showQuote{
-    NSString *title = @"Looks like you lost internet connection, here's a quote:";
+    NSString *title = @"You lost internet connection, here's a quote to entertain you:";
     NSString *quote = [self getRandomQuote];
     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
                                                           message:quote
@@ -17,7 +17,7 @@
 
 - (void) saveQuotesToCoreData{
     NSManagedObjectContext *context = [self managedObjectContext];
-    FTDatabaseRequester *db = [[FTDatabaseRequester alloc] init];
+    DatabaseRequester *db = [[DatabaseRequester alloc] init];
     
     [db getQuotesWithBlock:^(NSArray *objects, NSError *error) {
         for (NSDictionary *obj in objects) {

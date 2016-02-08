@@ -1,7 +1,7 @@
 #import "AddContactInfoViewController.h"
 #import "ProfileViewController.h"
 #import <Parse/Parse.h>
-#import "FTUtils.h"
+#import "Utils.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface AddContactInfoViewController ()
@@ -25,15 +25,15 @@
     NSString *email = self.emailTextField.text;
     NSString *phone = self.phoneTextField.text;
     if(![self emailIsValid:email]){
-        [FTUtils showAlert:@"Wrong input" withMessage:@"Invalid email"];
+        [Utils showAlert:@"Wrong input" withMessage:@"Invalid email"];
     }
     else if(! [self phoneIsValid:phone]){
-        [FTUtils showAlert:@"Wrong input" withMessage:@"Invalid phone number"];
+        [Utils showAlert:@"Wrong input" withMessage:@"Invalid phone number"];
     }
     else{
         [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *FBuser, NSError *error) {
             if (error) {
-                [FTUtils showAlert:@"We are sorry" withMessage:@"Unable to connect to server."];
+                [Utils showAlert:@"We are sorry" withMessage:@"Unable to connect to server."];
             }
             else {
                 NSString *userName = [FBuser name];

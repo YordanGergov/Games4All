@@ -1,6 +1,6 @@
 #import "EditProfileViewController.h"
-#import "FTUtils.h"
-#import "FTDatabaseRequester.h"
+#import "Utils.h"
+#import "DatabaseRequester.h"
 
 @interface EditProfileViewController ()
 
@@ -24,13 +24,13 @@
     NSString *email = self.emailTextField.text;
     NSString *phone = self.phoneTextField.text;
     if(self.displayNameTextField.text.length == 0) {
-        [FTUtils showAlert:@"Wrong input" withMessage:@"Invalid name"];
+        [Utils showAlert:@"Wrong input" withMessage:@"Invalid name"];
     }
     if(![self emailIsValid:email]){
-        [FTUtils showAlert:@"Wrong input" withMessage:@"Invalid email"];
+        [Utils showAlert:@"Wrong input" withMessage:@"Invalid email"];
     }
     else if(! [self phoneIsValid:phone]){
-        [FTUtils showAlert:@"Wrong input" withMessage:@"Invalid phone number"];
+        [Utils showAlert:@"Wrong input" withMessage:@"Invalid phone number"];
     }
     else{
         PFUser *currUser = [PFUser currentUser];

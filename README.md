@@ -1,10 +1,11 @@
-# Project Game Gathering
+# Project GAMES4ALL
 
-Project for boardgame and couch multiplayer video games gathering app. Everybody that is accepted to a meeting, posts what game they want to play. There will be lists of games, and best and recommended player counts for each of them.
+Project for boardgame, couch, online multiplayer video games gathering app. 
 
-The functionalities will be as follows:(pending changes)
-*  Users will be able to register and login (using Parse.com and FB)
-*  Users will be able to create/host a game  ;
-*  Users can delete own games
-*  Everybody can apply to join the meeting
-*  There will be music
+The functionalities are as follows:
+*  Users are able to register and login (using Parse.com and FB)
+*  Users are able to create/host a game with title, description and play time they want
+*  Users can delete OWN games
+*  Other user can apply to join the created game
+*  The creator can accept/reject them!
+

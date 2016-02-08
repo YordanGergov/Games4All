@@ -1,10 +1,10 @@
 #import "BidsViewController.h"
 #import "GameUITableViewCell.h"
 #import "HomeUITableViewCell.h"
-#import "FTUtils.h"
+#import "Utils.h"
 #import "Meeting.h"
 #import "Game.h"
-#import "FTSpinner.h"
+#import "Spinner.h"
 #import "BidAuthorContactsViewController.h"
 
 @interface BidsViewController ()
@@ -12,7 +12,7 @@
 @end
 
 @implementation BidsViewController{
-    FTSpinner *spinner;
+    Spinner *spinner;
     PFUser *currAuthor;
 }
 
@@ -23,7 +23,7 @@ static NSInteger rowHeight = 100;
     
     UINib *nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
-    spinner = [[FTSpinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
+    spinner = [[Spinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
     [spinner startSpinning];
 }
 -(void)afterGettingDataFromDbWithData:(NSArray*) data
@@ -33,7 +33,7 @@ static NSInteger rowHeight = 100;
         self.data = [NSMutableArray arrayWithArray:data];
         [self.tableView reloadData];
     } else {
-        [FTUtils showAlert:@"Error" withMessage:@"Sorry, we couldn't retrieve the games."];
+        [Utils showAlert:@"Error" withMessage:@"Sorry, we couldn't retrieve the games."];
     }
 }
 
@@ -60,7 +60,7 @@ static NSInteger rowHeight = 100;
     cell.labelTItle.text = game.title;
     NSNumber *playTime = game.playTime;
     if ([playTime isEqual:@0]) {
-        cell.labelPlayTime.text = @"FREE";
+        cell.labelPlayTime.text = @"N/A";
     }
     else{
         cell.labelPlayTime.text = [NSString stringWithFormat:@"%@ hours", playTime];

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface FTSpinner : NSObject
+@interface Spinner : NSObject
 @property float size;
 @property float scale;
 -(instancetype)initWithView: (UIView*) view

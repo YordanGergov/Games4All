@@ -30,15 +30,6 @@
                                     <action selector="fbLoginButtonTaped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZUb-km-9Hf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games4All! " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KQ-9K-6Lv">
-                                <rect key="frame" x="195" y="122" width="238" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="gfP-rU-miD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUm-bM-ugO">
                                 <rect key="frame" x="272" y="329" width="56" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -59,7 +50,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rsz_1rsz_scuf_orange.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4Uk-rQ-Xyg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="animation-joystick.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4Uk-rQ-Xyg">
                                 <rect key="frame" x="529" y="465" width="77" height="135"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-c2-bCY">
@@ -68,13 +59,22 @@
                                     <constraint firstAttribute="width" constant="83" id="1dT-f4-zJh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Continue">
+                                <state key="normal" title="Enter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="continueTaped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="w9a-xI-Dcj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games4All! " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KQ-9K-6Lv">
+                                <rect key="frame" x="195" y="122" width="238" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="238" id="gfP-rU-miD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -90,7 +90,7 @@
                             <constraint firstItem="4Uk-rQ-Xyg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="401" id="dUx-2W-N2X"/>
                             <constraint firstItem="UEr-c2-bCY" firstAttribute="centerX" secondItem="8KQ-9K-6Lv" secondAttribute="centerX" constant="-13.5" id="edH-5T-3AI"/>
                             <constraint firstItem="4Uk-rQ-Xyg" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="hfk-3E-oXO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4Uk-rQ-Xyg" secondAttribute="trailing" constant="-22" id="l7e-s0-Ahu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Uk-rQ-Xyg" secondAttribute="trailing" constant="-26" id="l7e-s0-Ahu"/>
                             <constraint firstItem="UEr-c2-bCY" firstAttribute="centerX" secondItem="yKp-7w-ZvE" secondAttribute="centerX" id="oKg-Wk-Lxg"/>
                             <constraint firstItem="zUm-bM-ugO" firstAttribute="top" secondItem="yKp-7w-ZvE" secondAttribute="bottom" constant="18" id="vSf-dq-jkk"/>
                         </constraints>
@@ -452,36 +452,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr7-Nt-bY1">
-                                <rect key="frame" x="17" y="313" width="100" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="7ag-FK-yGv"/>
-                                </constraints>
-                                <state key="normal" title="Your Games">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mCX-qv-H1f" kind="show" id="QCW-Ie-Jfc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGc-SP-0Py">
-                                <rect key="frame" x="15" y="351" width="105" height="30"/>
-                                <state key="normal" title="Joined Games">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="nBw-Af-M1Z" kind="show" id="C8e-LK-gn5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAe-N9-tr0">
-                                <rect key="frame" x="43" y="389" width="49" height="30"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutClicked:" destination="vee-Lx-VDm" eventType="touchUpInside" id="XV9-PO-Lzh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone No." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj3-DR-Lie">
                                 <rect key="frame" x="161" y="162" width="301" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -521,8 +491,38 @@
                                     <segue destination="ZNn-ph-ssB" kind="show" id="ouC-Q5-Jwo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wi1-xo-qeq">
-                                <rect key="frame" x="17" y="275" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr7-Nt-bY1">
+                                <rect key="frame" x="261" y="329" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7ag-FK-yGv"/>
+                                </constraints>
+                                <state key="normal" title="Your Games">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mCX-qv-H1f" kind="show" id="QCW-Ie-Jfc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGc-SP-0Py">
+                                <rect key="frame" x="259" y="367" width="105" height="30"/>
+                                <state key="normal" title="Joined Games">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nBw-Af-M1Z" kind="show" id="C8e-LK-gn5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAe-N9-tr0">
+                                <rect key="frame" x="287" y="405" width="49" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="vee-Lx-VDm" eventType="touchUpInside" id="XV9-PO-Lzh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wi1-xo-qeq">
+                                <rect key="frame" x="261" y="291" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="iqm-6T-qs5"/>
                                 </constraints>
@@ -533,8 +533,8 @@
                                     <segue destination="1zm-Wi-V1Z" kind="show" id="R88-HF-2HD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIC-dG-ivV">
-                                <rect key="frame" x="19" y="237" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIC-dG-ivV">
+                                <rect key="frame" x="263" y="253" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="x2S-hE-alb"/>
                                 </constraints>
@@ -1108,7 +1108,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rsz_1rsz_scuf_orange.jpg" width="71" height="45"/>
+        <image name="animation-joystick.jpg" width="71" height="45"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uCZ-hd-2aZ"/>

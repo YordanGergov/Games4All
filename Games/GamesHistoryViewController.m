@@ -1,16 +1,16 @@
 #import "GamesHistoryViewController.h"
 #import "HomeUITableViewCell.h"
-#import "FTUtils.h"
+#import "Utils.h"
 #import "Game.h"
 #import "GameBidsTableViewController.h"
-#import "FTSpinner.h"
+#import "Spinner.h"
 
 @interface GamesHistoryViewController ()
 
 @end
 
 @implementation GamesHistoryViewController{
-    FTSpinner *spinner;
+    Spinner *spinner;
 }
 
 static NSString *cellIdentifier = @"HomeUITableViewCell";
@@ -20,7 +20,7 @@ static NSInteger rowHeight = 100;
     UINib *nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
     
-    spinner = [[FTSpinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
+    spinner = [[Spinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
     [spinner startSpinning];
 }
 -(void)afterGettingDataFromDbWithData:(NSArray*) data
@@ -30,7 +30,7 @@ static NSInteger rowHeight = 100;
         self.data = [NSMutableArray arrayWithArray:data];
         [self.tableView reloadData];
     } else {
-        [FTUtils showAlert:@"Error" withMessage:@"Sorry, we couldn't retrieve the games."];
+        [Utils showAlert:@"Error" withMessage:@"Sorry, we couldn't retrieve the games."];
     }
 }
 

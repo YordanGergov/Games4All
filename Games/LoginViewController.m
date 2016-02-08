@@ -2,12 +2,12 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
-#import "FTSpinner.h"
-#import "FTUtils.h"
+#import "Spinner.h"
+#import "Utils.h"
 #import "ProfileViewController.h"
-#import "FTQuoteDispenser.h"
+#import "QuoteDispenser.h"
 #import <CoreData/CoreData.h>
-#import "FTDatabaseRequester.h"
+#import "DatabaseRequester.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
@@ -42,9 +42,9 @@
 
 - (void) populateCoreData{
     if(![self isDBFilled]){
-        if ([FTUtils isConnectionAvailable]) {
+        if ([Utils isConnectionAvailable]) {
             NSManagedObjectContext *context = [self managedObjectContext];
-            FTDatabaseRequester *db = [[FTDatabaseRequester alloc] init];
+            DatabaseRequester *db = [[DatabaseRequester alloc] init];
             [db getQuotesWithBlock:^(NSArray *objects, NSError *error) {
                 for (NSDictionary *obj in objects) {
                     NSString *quoteBody = [obj objectForKey:@"Quote"];
@@ -61,14 +61,14 @@
     dispatch_queue_t myQueue = dispatch_queue_create("My Queue",NULL);
     dispatch_async(myQueue, ^{
         while (true) {
-            BOOL connectionAvailable = [FTUtils isConnectionAvailable];
+           BOOL connectionAvailable = [Utils isConnectionAvailable];
             if (connectionAvailable != 1) {
                 break;
             }
             [NSThread sleepForTimeInterval:2.0];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            FTQuoteDispenser *dispenser = [[FTQuoteDispenser alloc] init];
+            QuoteDispenser *dispenser = [[QuoteDispenser alloc] init];
             [dispenser showQuote];
             [self startAsyncTask];
         });
@@ -83,12 +83,12 @@
 - (IBAction)fbLoginButtonTaped:(id)sender {
     
     NSArray *permissionsArray = @[ @"user_about_me", @"email", @"user_birthday", @"user_location"];
-    FTSpinner *spinner = [[FTSpinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
+    Spinner *spinner = [[Spinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
     [spinner startSpinning];
     
     if ([self isUserLoggedIn]) {
         [spinner stopSpinning];
-        [FTUtils showAlert:@"Um.." withMessage:@"You are already logged in"];
+        [Utils showAlert:@"Um.." withMessage:@"You are already logged in"];
     }
     else{
         [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
@@ -98,17 +98,17 @@
                 if (!error) {
                     NSLog(@"The user cancelled the Facebook login.");
                 } else {
-                    [FTUtils showAlert:@"We are sorry" withMessage:@"Unable to log in with Facebook"];
+                    [Utils showAlert:@"We are sorry" withMessage:@"Unable to log in with Facebook"];
                     NSLog(@"An error occurred: %@", error);
                     errorMessage = [error localizedDescription];
                 }
             } else {
                 if (user.isNew) {
                     NSLog(@"User with facebook signed up and logged in!");
-                    [FTUtils showAlert:@"Login sucessfull" withMessage: @"Welcome !"];
+                    [Utils showAlert:@"Login sucessfull" withMessage: @"Welcome !"];
                 } else {
                     NSLog(@"User with facebook logged in!");
-                    [FTUtils showAlert:@"Login sucessfull" withMessage: @"Welcome !"];
+                    [Utils showAlert:@"Login sucessfull" withMessage: @"Welcome !"];
                 }
             }
         }];
@@ -124,12 +124,12 @@
             [self performSegueWithIdentifier:@"ToAddContactInfo" sender:self];
         }
     }else{
-        [FTUtils showAlert:@"Please authenticate" withMessage:@"You are not logged in!"];
+        [Utils showAlert:@"Please authenticate" withMessage:@"You are not logged in!"];
     }
 }
 - (IBAction)helpTaped:(id)sender {
     NSString *message = @"Add a game you want to play and people will join!";
-    [FTUtils showAlert:@"Hi!" withMessage:message];
+    [Utils showAlert:@"Hi!" withMessage:message];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
 
-@interface FTQuoteDispenser : NSObject
+@interface QuoteDispenser : NSObject
 - (void) showQuote;
 @end

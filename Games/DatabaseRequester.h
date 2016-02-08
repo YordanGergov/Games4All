@@ -3,7 +3,7 @@
 #import "Game.h"
 #import "Meeting.h"
 
-@interface FTDatabaseRequester : NSObject
+@interface DatabaseRequester : NSObject
 
 -(void)addGameToDbWithGame: (Game *) game
                     andBlock: (void (^)(BOOL succeeded, NSError *error)) block;

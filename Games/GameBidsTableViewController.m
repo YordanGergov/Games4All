@@ -1,6 +1,6 @@
 #import "GameBidsTableViewController.h"
-#import "FTDatabaseRequester.h"
-#import "FTUtils.h"
+#import "DatabaseRequester.h"
+#import "Utils.h"
 #import "GameBidsUITableViewCell.h"
 #import "Meeting.h"
 #import "WebFacebookViewController.h"
@@ -10,7 +10,7 @@
 @end
 
 @implementation GameBidsTableViewController{
-    FTDatabaseRequester *db;
+    DatabaseRequester *db;
     NSIndexPath *indexPathForApprovedBid;
 }
 static NSString *cellIdentifier = @"GameBidsUITableViewCell";
@@ -29,14 +29,14 @@ static NSString *labelTextApproved;
     UINib *nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
     
-    db = [[FTDatabaseRequester alloc] init];
+    db = [[DatabaseRequester alloc] init];
     __weak GameBidsTableViewController *weakSelf = self;
     [db getGameBidsForGame:self.game andBlock:^(NSArray *bids, NSError *error) {
         if(!error) {
             weakSelf.bidsData = [NSMutableArray arrayWithArray:bids];
             [weakSelf.tableView reloadData];
         } else {
-            [FTUtils showAlert:@"We are sorry" withMessage:@"We can't show you who wants to join your game right now."];
+            [Utils showAlert:@"We are sorry" withMessage:@"We can't show you who wants to join your game right now."];
         }
     }];
 }
@@ -89,14 +89,14 @@ static NSString *labelTextApproved;
         indexPathForApprovedBid = indexPath;
         Meeting *toBeApprovedMeeting = self.bidsData[indexPath.row];
         if (toBeApprovedMeeting.approved) {
-            [FTUtils showAlert:@"Already done" withMessage:@"You have already approved this person"];
+            [Utils showAlert:@"Already done" withMessage:@"You have already approved this person"];
         } else if(self.game.active) {
             [[[UIAlertView alloc] initWithTitle:@"Arrange a game" message:@"Are you sure you want to play with this person?" delegate:self cancelButtonTitle:@"Yes, seems legit!" otherButtonTitles:@"No, I will keep looking!", nil] show];
         } else {
-            [FTUtils showAlert:@"This game already has players" withMessage:@"You can't game with more than two people at once!"];
+            [Utils showAlert:@"This game already has players" withMessage:@"You can't game with more than two people at once!"];
         }
     } else {
-        [FTUtils showAlert:@"We are sorry" withMessage:@"Something went wrong with your fingers"];
+        [Utils showAlert:@"We are sorry" withMessage:@"Something went wrong with your fingers"];
     }
     
 }
@@ -108,14 +108,14 @@ static NSString *labelTextApproved;
         __weak GameBidsTableViewController *weakSelf = self;
         [db updateMeetingForApprovalWithMeeting:approvedMeeting andBlock:^(BOOL succeeded, NSError *error) {
             if(succeeded) {
-                [FTUtils showAlert:@"Congratulations" withMessage:@"Your game meeting is arranged!"];
+                [Utils showAlert:@"Congratulations" withMessage:@"Your game meeting is arranged!"];
                 approvedMeeting.approved = @YES;
                 weakSelf.game.active = 0;
                 GameBidsUITableViewCell* cell = (GameBidsUITableViewCell*)
                 [weakSelf.tableView cellForRowAtIndexPath:indexPathForApprovedBid];
                 cell.labelApproved.text = labelTextApproved;
             } else {
-                [FTUtils showAlert:@"We are sorry" withMessage:@"You can't approve this person right now"];
+                [Utils showAlert:@"We are sorry" withMessage:@"You can't approve this person right now"];
             }
         }];
     }
@@ -134,14 +134,14 @@ static NSString *labelTextApproved;
                     [weakSelf.bidsData removeObjectAtIndex:indexPath.row];
                     [weakSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
                 } else {
-                    [FTUtils showAlert:@"We are sorry" withMessage:@"Something went wrong and we couldn't delete this"];
+                    [Utils showAlert:@"We are sorry" withMessage:@"Something went wrong and we couldn't delete this"];
                 }
             }];
         } else {
-            [FTUtils showAlert:@"Better keep it" withMessage:@"It would be better to have info about your gaming partner."];
+            [Utils showAlert:@"Better keep it" withMessage:@"It would be better to have info about your gaming partner."];
         }
     } else {
-        [FTUtils showAlert:@"We are sorry" withMessage:@"Something went wrong with your fingers"];
+        [Utils showAlert:@"We are sorry" withMessage:@"Something went wrong with your fingers"];
     }
 }
 @end

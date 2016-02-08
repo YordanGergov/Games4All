@@ -2,9 +2,10 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 #import "Game.h"
-#import "FTDatabaseRequester.h"
-#import "FTUtils.h"
+#import "DatabaseRequester.h"
+#import "Utils.h"
 #import "AddGameViewController.h"
+#import "Games-Swift.h"
 
 @interface AddGameViewController ()
 
@@ -32,7 +33,7 @@
     self.descriptionTextInput.delegate = self;
     
     //UIImage *image = self.imageView.image;
-    int r = arc4random() % 6;
+    int r = arc4random() % 5;
     NSString *index = [NSString stringWithFormat:@"%d", r];
     NSString *imgName = [NSString stringWithFormat:@"%@%@%@", @"game", index, @".jpg"];
     UIImage *image = [UIImage imageNamed:imgName];
@@ -49,7 +50,7 @@
 
 - (IBAction)takePhoto:(id)sender {
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        [FTUtils showAlert:@"We are sorry" withMessage:@"Your device has no camera"];
+        [Utils showAlert:@"We are sorry" withMessage:@"Your device has no camera"];
     } else {
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
@@ -62,7 +63,7 @@
 
 - (IBAction)selectPhoto:(id)sender {
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        [FTUtils showAlert:@"We are sorry" withMessage:@"Your source isn't available"];
+        [Utils showAlert:@"We are sorry" withMessage:@"Your source isn't available"];
     } else {
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
@@ -92,7 +93,7 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
-    [FTUtils showAlert:@"We are sorry" withMessage:@"Failed to get your location"];
+    [Utils showAlert:@"We are sorry" withMessage:@"Failed to get your location"];
 }
 
 
@@ -109,7 +110,7 @@
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
             adress = placemark.thoroughfare;
-            [FTUtils showAlert:@"Location included." withMessage:adress];
+            [Utils showAlert:@"Location included." withMessage:adress];
         } else {
             NSLog(@"didUpdateToLocation%@", error.debugDescription);
         }
@@ -136,24 +137,27 @@
         NSData *imageData = UIImageJPEGRepresentation(image, 0.05f);
         PFFile *imageFile = [PFFile fileWithData:imageData];
         game.photo = imageFile;
-        if([FTUtils isConnectionAvailable]){
+        Reachability *connectionChecker = [[Reachability alloc] init];
+        // BOOL connectionAvailable = connectionChecker.isConnectedToNetwork;
+        //BOOL connectionAvailable = [ Reachability isConnectedToNetwork];
+        if([Reachability isConnectedToNetwork]){
             
             
-            FTDatabaseRequester *db = [[FTDatabaseRequester alloc] init];
+            DatabaseRequester *db = [[DatabaseRequester alloc] init];
             [db addGameToDbWithGame:game andBlock:^(BOOL succeeded, NSError *error) {
                 if(succeeded) {
-                    [FTUtils showAlert:@"Success" withMessage:@"Your game has been published!"];
+                    [Utils showAlert:@"Success" withMessage:@"Your game has been published!"];
                     AddGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTableViewController"];
                     
                     [self.navigationController pushViewController:controller animated:YES];
                 } else {
-                    [FTUtils showAlert:@"We are sorry" withMessage:@"Your game could not be published!"];
+                    [Utils showAlert:@"We are sorry" withMessage:@"Your game could not be published!"];
                     NSLog(@"Errorr: %@", error);
                 }
             }];
         }
         else{
-            [FTUtils showAlert:@"Error" withMessage:@"No internet connection"];
+            [Utils showAlert:@"Error" withMessage:@"No internet connection"];
         }
     }
 }
@@ -180,15 +184,15 @@
     NSString *desc = self.descriptionTextInput.text;
     
     if(title.length == 0){
-        [FTUtils showAlert:@"Wrong input" withMessage:@"Title is required"];
+        [Utils showAlert:@"Wrong input" withMessage:@"Title is required"];
         return false;
     }
     if(desc.length > 100){
-        [FTUtils showAlert:@"Wrong input" withMessage:@"Description too long"];
+        [Utils showAlert:@"Wrong input" withMessage:@"Description too long"];
         return  false;
     }
     if(playTime.length == 0 || ![self validatePlayTime:playTime]){
-        [FTUtils showAlert:@"Wrong input" withMessage:@"Play Time is invalid"];
+        [Utils showAlert:@"Wrong input" withMessage:@"Play Time is invalid"];
         return false;
     }
     return true;

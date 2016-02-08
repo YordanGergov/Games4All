@@ -1,8 +1,8 @@
-#import "FTUtils.h"
+#import "Utils.h"
 #import <CoreLocation/CoreLocation.h>
 #import "SystemConfiguration/SystemConfiguration.h"
 
-@implementation FTUtils
+@implementation Utils
 + (void) showAlert: (NSString *) title withMessage: (NSString*) message{
     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:title
                                                           message:message

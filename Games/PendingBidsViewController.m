@@ -1,19 +1,19 @@
 #import "PendingBidsViewController.h"
-#import "FTDatabaseRequester.h"
+#import "DatabaseRequester.h"
 
 @interface PendingBidsViewController ()
 
 @end
 
 @implementation PendingBidsViewController{
-    FTDatabaseRequester* db;
+    DatabaseRequester* db;
 }
 
 - (void)viewDidLoad {
     [self.tabBarController setTitle:@"Pendings Game Meetings"];
     self.tableView = self.tableViewPendingBids;
     [super viewDidLoad];
-    db = [[FTDatabaseRequester alloc] init];
+    db = [[DatabaseRequester alloc] init];
     [db getPendingBidsForUser:[PFUser currentUser] andBlock:^(NSArray *games, NSError *error) {
         [super afterGettingDataFromDbWithData:games andError:error];
     }];

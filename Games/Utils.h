@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface FTUtils : NSObject
+@interface Utils : NSObject
 +(void) showAlert: (NSString*) title
       withMessage: (NSString*) message;
 +(NSString *)encodeToBase64String:(UIImage *)image;

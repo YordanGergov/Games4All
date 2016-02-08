@@ -1,5 +1,5 @@
 #import "ActiveGamesViewController.h"
-#import "FTDatabaseRequester.h"
+#import "DatabaseRequester.h"
 #import "Game.h"
 #import "GameBidsTableViewController.h"
 
@@ -8,13 +8,13 @@
 @end
 
 @implementation ActiveGamesViewController{
-    FTDatabaseRequester* db;
+    DatabaseRequester* db;
 }
 
 - (void)viewDidLoad {
     self.tableView = self.tableViewActiveGames;
     [super viewDidLoad];
-    db = [[FTDatabaseRequester alloc] init];
+    db = [[DatabaseRequester alloc] init];
     [db getActiveGamesForUser:[PFUser currentUser] andBlock:^(NSArray *games, NSError *error) {
         [super afterGettingDataFromDbWithData:games andError:error];
     }];

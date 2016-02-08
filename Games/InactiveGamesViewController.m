@@ -1,18 +1,18 @@
 #import "InactiveGamesViewController.h"
-#import "FTDatabaseRequester.h"
+#import "DatabaseRequester.h"
 
 @interface InactiveGamesViewController ()
 
 @end
 
 @implementation InactiveGamesViewController{
-    FTDatabaseRequester* db;
+    DatabaseRequester* db;
 }
 
 - (void)viewDidLoad {
     self.tableView = self.tableViewInactiveGames;
     [super viewDidLoad];
-    db = [[FTDatabaseRequester alloc] init];
+    db = [[DatabaseRequester alloc] init];
     [db getInactiveGamesForUser:[PFUser currentUser] andBlock:^(NSArray *games, NSError *error) {
         [super afterGettingDataFromDbWithData:games andError:error];
     }];

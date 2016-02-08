@@ -1,9 +1,9 @@
 #import "HomeTableViewController.h"
 #import "HomeUITableViewCell.h"
-#import "FTDatabaseRequester.h"
+#import "DatabaseRequester.h"
 #import "Game.h"
-#import "FTSpinner.h"
-#import "FTUtils.h"
+#import "Spinner.h"
+#import "Utils.h"
 
 @interface HomeTableViewController ()
 
@@ -20,8 +20,8 @@ static NSString *cellIdentifier = @"HomeUITableViewCell";
     
     UINib *nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
-    FTDatabaseRequester *db = [[FTDatabaseRequester alloc] init];
-    FTSpinner *spinner = [[FTSpinner alloc] initWithView:self.tableView andSize:70 andScale:2.5f];
+    DatabaseRequester *db = [[DatabaseRequester alloc] init];
+    Spinner *spinner = [[Spinner alloc] initWithView:self.tableView andSize:70 andScale:2.5f];
     [spinner startSpinning];
     
     __weak HomeTableViewController *weakSelf = self;
@@ -31,7 +31,7 @@ static NSString *cellIdentifier = @"HomeUITableViewCell";
             weakSelf.data = [NSMutableArray arrayWithArray:objects];
             [weakSelf.tableView reloadData];
         } else {
-            [FTUtils showAlert:@"We are sorry" withMessage:@"We couldn't retrieve the games."];
+            [Utils showAlert:@"We are sorry" withMessage:@"We couldn't retrieve the games."];
         }
     }];
 }
@@ -100,7 +100,7 @@ static NSString *cellIdentifier = @"HomeUITableViewCell";
                 [weakSelf.data removeObjectAtIndex:indexPath.row];
                 [weakSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             } else {
-                [FTUtils showAlert:@"We are sorry" withMessage:@"Unfortunatelly, you can't delete your game game right now"];
+                [Utils showAlert:@"We are sorry" withMessage:@"Unfortunatelly, you can't delete your game game right now"];
             }
         }];
     }

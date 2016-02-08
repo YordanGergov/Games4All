@@ -1,7 +1,7 @@
 
-#import "FTDatabaseRequester.h"
+#import "DatabaseRequester.h"
 
-@implementation FTDatabaseRequester
+@implementation DatabaseRequester
 
 -(void)addGameToDbWithGame: (Game *) game
                     andBlock: (void (^)(BOOL succeeded, NSError *error)) block{

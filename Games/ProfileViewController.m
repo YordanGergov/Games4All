@@ -1,8 +1,8 @@
 #import "ProfileViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
-#import "FTUtils.h"
+#import "Utils.h"
 #import <Parse/Parse.h>
-#import "FTSpinner.h"
+#import "Spinner.h"
 
 @interface ProfileViewController ()
 
@@ -32,13 +32,13 @@
 }
 
 -(void)getPersonalInfo{
-    FTSpinner *spinner = [[FTSpinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
+    Spinner *spinner = [[Spinner alloc] initWithView:self.view andSize:70 andScale:2.5f];
     [spinner startSpinning];
     __weak ProfileViewController *weakSelf = self;
     [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *FBuser, NSError *error) {
         [spinner stopSpinning];
         if (error) {
-            [FTUtils showAlert:@"We are sorry" withMessage:@"Couldn't fetch your Facebook profile"];
+            [Utils showAlert:@"We are sorry" withMessage:@"Couldn't fetch your Facebook profile"];
         }
         else {
             NSString *userImageURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [FBuser objectID]];
