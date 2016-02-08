@@ -20,6 +20,6 @@
     }];
 }
 -(void)viewWillAppear:(BOOL)animated{
-    [self.tabBarController setTitle:@"Games you game"];
+    [self.tabBarController setTitle:@"Games you created"];
 }
 @end

@@ -33,7 +33,7 @@
     self.descriptionTextInput.delegate = self;
     
     //UIImage *image = self.imageView.image;
-    int r = arc4random() % 5;
+    int r = arc4random() % 6;
     NSString *index = [NSString stringWithFormat:@"%d", r];
     NSString *imgName = [NSString stringWithFormat:@"%@%@%@", @"game", index, @".jpg"];
     UIImage *image = [UIImage imageNamed:imgName];
@@ -137,9 +137,7 @@
         NSData *imageData = UIImageJPEGRepresentation(image, 0.05f);
         PFFile *imageFile = [PFFile fileWithData:imageData];
         game.photo = imageFile;
-        Reachability *connectionChecker = [[Reachability alloc] init];
-        // BOOL connectionAvailable = connectionChecker.isConnectedToNetwork;
-        //BOOL connectionAvailable = [ Reachability isConnectedToNetwork];
+
         if([Reachability isConnectedToNetwork]){
             
             
