@@ -54,6 +54,7 @@
 		20B881961C6A193B003D0CC2 /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B8818C1C6A193B003D0CC2 /* images.jpg */; };
 		20B881971C6A193B003D0CC2 /* logo-final.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B8818D1C6A193B003D0CC2 /* logo-final.jpg */; };
 		20B881981C6A193B003D0CC2 /* rsz_122-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B8818E1C6A193B003D0CC2 /* rsz_122-2.jpg */; };
+		20B8819A1C6A1A11003D0CC2 /* animation-joystick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B881991C6A1A11003D0CC2 /* animation-joystick.jpg */; };
 		841C06871A06992500008225 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841C067D1A06992500008225 /* AudioToolbox.framework */; };
 		841C06881A06992500008225 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841C067E1A06992500008225 /* CFNetwork.framework */; };
 		841C06891A06992500008225 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841C067F1A06992500008225 /* CoreGraphics.framework */; };
@@ -160,6 +161,7 @@
 		20B8818C1C6A193B003D0CC2 /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = images.jpg; path = Images/images.jpg; sourceTree = "<group>"; };
 		20B8818D1C6A193B003D0CC2 /* logo-final.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "logo-final.jpg"; path = "Images/logo-final.jpg"; sourceTree = "<group>"; };
 		20B8818E1C6A193B003D0CC2 /* rsz_122-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "rsz_122-2.jpg"; path = "Images/rsz_122-2.jpg"; sourceTree = "<group>"; };
+		20B881991C6A1A11003D0CC2 /* animation-joystick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "animation-joystick.jpg"; path = "../../pics/animation-joystick.jpg"; sourceTree = "<group>"; };
 		841C067D1A06992500008225 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		841C067E1A06992500008225 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		841C067F1A06992500008225 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,6 +232,7 @@
 		209A5A3A1A0CE3BE00F4FF81 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				20B881991C6A1A11003D0CC2 /* animation-joystick.jpg */,
 				20B881851C6A193B003D0CC2 /* animation-joystick.jpg */,
 				20B881861C6A193B003D0CC2 /* game0.jpg */,
 				20B881871C6A193B003D0CC2 /* game1.jpg */,
@@ -537,6 +540,7 @@
 				20B8817F1C6A17F8003D0CC2 /* game5.jpg in Resources */,
 				20B881981C6A193B003D0CC2 /* rsz_122-2.jpg in Resources */,
 				841C06991A06DE4200008225 /* HomeUITableViewCell.xib in Resources */,
+				20B8819A1C6A1A11003D0CC2 /* animation-joystick.jpg in Resources */,
 				20B881821C6A17F8003D0CC2 /* rsz_122-2.jpg in Resources */,
 				20B881941C6A193B003D0CC2 /* game4.jpg in Resources */,
 				84AF66041A0CD2A40039553F /* GameBidsUITableViewCell.xib in Resources */,
