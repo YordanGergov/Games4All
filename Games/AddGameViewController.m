@@ -6,6 +6,7 @@
 #import "Utils.h"
 #import "AddGameViewController.h"
 #import "Games-Swift.h"
+#import "HomeTableViewController.h"
 
 @interface AddGameViewController ()
 
@@ -145,7 +146,7 @@
             [db addGameToDbWithGame:game andBlock:^(BOOL succeeded, NSError *error) {
                 if(succeeded) {
                     [Utils showAlert:@"Success" withMessage:@"Your game has been published!"];
-                    AddGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTableViewController"];
+                    HomeTableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTableViewController"];
                     
                     [self.navigationController pushViewController:controller animated:YES];
                 } else {

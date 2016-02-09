@@ -30,12 +30,12 @@
     
     animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
-    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.imageViewCat]];
-    gravity.magnitude = 0.01;
+    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.imageViewJoystick]];
+    gravity.magnitude = 0.009;
     gravity.angle = -M_E;
     [animator addBehavior:gravity];
     
-    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.imageViewCat]];
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.imageViewJoystick]];
     [collision setTranslatesReferenceBoundsIntoBoundary:YES];
     [animator addBehavior:collision];
 }

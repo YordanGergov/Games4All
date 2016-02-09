@@ -61,12 +61,6 @@
                                 <color key="textColor" red="0.75686274509803919" green="0.77254901960784317" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animation-joystick.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4Uk-rQ-Xyg">
-                                <rect key="frame" x="529" y="465" width="77" height="135"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="CU0-Jn-eCO"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-c2-bCY">
                                 <rect key="frame" x="259" y="263" width="83" height="32"/>
                                 <color key="backgroundColor" red="0.75686274509803919" green="0.77254901960784317" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,6 +87,12 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-final.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="roe-Li-4ZJ">
                                 <rect key="frame" x="79" y="132" width="443" height="130"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animation-joystick.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Uk-rQ-Xyg">
+                                <rect key="frame" x="529" y="465" width="77" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="CU0-Jn-eCO"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -121,7 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mhq-0C-654"/>
                     <connections>
-                        <outlet property="imageViewCat" destination="4Uk-rQ-Xyg" id="JL7-UY-XAU"/>
+                        <outlet property="imageViewJoystick" destination="4Uk-rQ-Xyg" id="XeG-eb-YhG"/>
                         <outlet property="loginBtn" destination="yKp-7w-ZvE" id="egC-qw-aHl"/>
                         <segue destination="Sad-mt-seu" kind="show" identifier="ToAddContactInfo" id="7Ds-a8-FRY"/>
                         <segue destination="vee-Lx-VDm" kind="show" identifier="ToProfile" id="uCZ-hd-2aZ"/>
@@ -628,15 +628,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZc-Ks-1ZT">
-                                <rect key="frame" x="224" y="115" width="123" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="gXX-is-YXk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Author:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mp-MW-2zZ">
                                 <rect key="frame" x="16" y="367" width="56" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -701,6 +692,15 @@
                                     <action selector="actionWantToGame:" destination="mN7-F8-50y" eventType="touchUpInside" id="QcE-hR-7rg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZc-Ks-1ZT">
+                                <rect key="frame" x="224" y="115" width="123" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="gXX-is-YXk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1129,12 +1129,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="animation-joystick.jpg" width="71" height="45"/>
+        <image name="animation-joystick.png" width="71" height="45"/>
         <image name="logo-final.jpg" width="400" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GeQ-ZQ-Trt"/>
         <segue reference="uCZ-hd-2aZ"/>
+        <segue reference="GeQ-ZQ-Trt"/>
         <segue reference="9Vc-RW-yXX"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -44,27 +44,27 @@
     }
     return context;
 }
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    
-    if([title isEqualToString:@"asdf"])
-    {
-        NSLog(@"Button 1 was selected.");
-    }
-    else if([title isEqualToString:@"Button 2"])
-    {
-        NSLog(@"Button 2 was selected.");
-    }
-    else if([title isEqualToString:@"Button 3"])
-    {
-        NSLog(@"Button 3 was selected.");
-    }
-}
-- (NSString *) getRandomQuote2{
-    NSArray* quotes = [NSArray arrayWithObjects: @"I didn't know my dad was a construction site thief, but when I got home all the signs were there" , @"My grandfather had the heart of a Lion and a lifetime ban from the Central Park Zoo", nil];
-    int r = arc4random() % quotes.count;
-    return [quotes objectAtIndex:r];
-}
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+//    
+//    if([title isEqualToString:@"asdf"])
+//    {
+//        NSLog(@"Button 1 was selected.");
+//    }
+//    else if([title isEqualToString:@"Button 2"])
+//    {
+//        NSLog(@"Button 2 was selected.");
+//    }
+//    else if([title isEqualToString:@"Button 3"])
+//    {
+//        NSLog(@"Button 3 was selected.");
+//    }
+//}
+//- (NSString *) getRandomQuote2{
+//    NSArray* quotes = [NSArray arrayWithObjects: @"I didn't know my dad was a construction site thief, but when I got home all the signs were there" , @"My grandfather had the heart of a Lion and a lifetime ban from the Central Park Zoo", nil];
+//    int r = arc4random() % quotes.count;
+//    return [quotes objectAtIndex:r];
+//}
 
 @end

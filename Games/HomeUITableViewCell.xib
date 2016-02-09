@@ -24,12 +24,6 @@
                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Medium" family="Kohinoor Devanagari" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TAc-Pm-NGb">
-                        <rect key="frame" x="0.0" y="0.0" width="122" height="99"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="122" id="ZYZ-mJ-onR"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Play Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wl-IS-tBY">
                         <rect key="frame" x="130" y="58" width="135" height="30"/>
                         <constraints>
@@ -40,6 +34,12 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TAc-Pm-NGb">
+                        <rect key="frame" x="0.0" y="0.0" width="122" height="99"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="122" id="ZYZ-mJ-onR"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="9Wl-IS-tBY" firstAttribute="leading" secondItem="xes-q2-iuv" secondAttribute="leading" id="7gW-Ui-0V2"/>
