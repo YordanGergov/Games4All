@@ -88,7 +88,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-final.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="roe-Li-4ZJ">
                                 <rect key="frame" x="79" y="132" width="443" height="130"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animation-joystick.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Uk-rQ-Xyg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animation-joystick.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4Uk-rQ-Xyg">
                                 <rect key="frame" x="529" y="465" width="77" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="77" id="CU0-Jn-eCO"/>
@@ -1129,7 +1129,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="animation-joystick.png" width="71" height="45"/>
+        <image name="animation-joystick.jpg" width="71" height="45"/>
         <image name="logo-final.jpg" width="400" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
